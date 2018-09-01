@@ -13,7 +13,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import main.RoyalTrader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,9 +40,11 @@ public class Scenes implements EventHandler<ActionEvent> {
 
 
     public Handler handler;
+    public Boxes boxes;
 
     public Scenes(Handler handler) {
         this.handler = handler;
+        this.boxes = new Boxes();
     }
 
     public Scene mainMenu() {
@@ -81,7 +82,7 @@ public class Scenes implements EventHandler<ActionEvent> {
         middlePane.setSpacing(20);
         middlePane.setPadding(new Insets(40, 0, 0, 0));
 
-        newGameButton.setOnAction(handler);
+        newGameButton.setOnAction(this);
         exitGame.setOnAction(e -> {
             window.close();
             System.exit(0);
@@ -91,7 +92,7 @@ public class Scenes implements EventHandler<ActionEvent> {
     }
 
     public void handle(ActionEvent e) {
-
+        boxes.loginBox();
     }
 
 
