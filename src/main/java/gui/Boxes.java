@@ -5,8 +5,11 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -56,6 +59,31 @@ public class Boxes {
 
         loginWindow.setScene(logRegScene);
         loginWindow.show();
+    }
+
+    public void alertBox(String title, String message){
+        Stage alertBox = new Stage();
+        alertBox.setTitle(title);
+        alertBox.initModality(Modality.APPLICATION_MODAL);
+
+        VBox box = new VBox();
+        box.setPadding(new Insets(5));
+
+        Label textMessage = new Label(message);
+        textMessage.setWrapText(true);
+        textMessage.setPadding(new Insets(5,5,15,5));
+
+        Button confirm = new Button("Confirm");
+        confirm.setOnAction(e -> alertBox.close());
+
+        box.getChildren().addAll(textMessage, confirm);
+        box.setAlignment(Pos.CENTER);
+
+        Scene alertScene = new Scene(box,250, 100);
+
+        alertBox.setScene(alertScene);
+        alertBox.showAndWait();
+
     }
 
 }
