@@ -1,4 +1,4 @@
-package gui;
+package hopto.org.slazhy.gui;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;

@@ -1,4 +1,4 @@
-package gui;
+package hopto.org.slazhy.gui;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,7 +17,7 @@ import javafx.scene.text.Text;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static main.RoyalTrader.*;
+import static hopto.org.slazhy.main.RoyalTrader.*;
 
 
 public class Scenes implements EventHandler<ActionEvent> {
